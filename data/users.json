@@ -1,0 +1,29 @@
+[
+    {
+        "username": "user1",
+        "password": "123",
+        "accountType": "normal",
+        "moviesContributed": [],
+        "followers": [],
+        "following": [],
+        "list": []
+    },
+    {
+        "username": "user2",
+        "password": "123",
+        "accountType": "contributer",
+        "moviesContributed": [],
+        "followers": [],
+        "following": [],
+        "list": []
+    },
+    {
+        "username": "user3",
+        "password": "123",
+        "accountType": "normal",
+        "moviesContributed": [],
+        "followers": [],
+        "following": [],
+        "list": []
+    }
+]

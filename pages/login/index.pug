@@ -1,0 +1,48 @@
+doctype html
+head
+    title Movie Database
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
+    link(rel='stylesheet' href='login-style')
+    script(src='https://kit.fontawesome.com/7e8647c319.js' crossorigin='anonymous')
+
+body.w3-black
+    div.w3-row-padding.w3-animate-top
+        div.w3-third.unselectable &nbsp;
+        div.w3-third.w3-padding-64
+            h1.title.unselectable
+                | Epic Movie Database
+            
+            div#login-form.w3-container.w3-orange.w3-round-large.w3-padding-large
+                p
+                    label Username
+                    input#login_username.w3-input.w3-border.w3-border-orange.w3-round-large(type='text')
+                p
+                    label Password
+                    input#login_password.w3-input.w3-border.w3-border-orange.w3-round-large(type='password')
+                div.w3-cell-row
+                    div.w3-container.w3-cell.w3-cell-middle(style='padding: 0;')
+                        button.w3-button.w3-light-grey.w3-round-large.w3-hover-border-black(onclick='validateLogin()') Login
+                    div.w3-container.w3-cell(style='padding: 0;')
+                        p.w3-right
+                            | Don&apos;t have an account yet? 
+                            span.link(onclick="toggleForm('register')") Register
+
+            div#register-form.w3-container.w3-orange.w3-round-large.w3-padding-large(style='display: none;')
+                p
+                    label Username
+                    input#register_username.w3-input.w3-border.w3-border-orange.w3-round-large(type='text')
+                p
+                    label Password
+                    input#register_password.w3-input.w3-border.w3-border-orange.w3-round-large(type='password')
+                div.w3-cell-row
+                    div.w3-container.w3-cell.w3-cell-middle(style='padding: 0;')
+                        button.w3-button.w3-light-grey.w3-round-large.w3-hover-border-black(onclick='registerUser()') Register
+                div.w3-container.w3-cell(style='padding: 0;')
+                    p.w3-right
+                        | Already a member? 
+                        span.link(onclick="toggleForm('login')") Login
+
+        div.w3-third.unselectable &nbsp;
+    
+    script(src='login-client')

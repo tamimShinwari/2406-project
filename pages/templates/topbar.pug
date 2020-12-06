@@ -1,0 +1,14 @@
+div.w3-top.topbar
+    div.w3-bar
+        a.w3-bar-item.w3-button.w3-orange.w3-hover-orange(href='#' style='font-size: 18pt; padding: 10px 20px;') Epic Movie Database
+        button#userName_placeholder.w3-bar-item.w3-right.w3-button.w3-text-orange.w3-hover-orange(onclick='toggleMenu()' style='font-size: 18pt; padding: 10px 40px;')
+            i.fas.fa-user
+            |  &nbsp; User 1
+
+div#user-menu-out(onclick='toggleMenu()')
+div#user-menu
+    div.user-menu-section
+        a.w3-button.w3-text-orange.w3-hover-dark-gray.w3-hover-text-white(href='/profile') Profile
+        a.w3-button.w3-text-orange.w3-hover-dark-gray.w3-hover-text-white(href='/contribute') Contribute
+    div.user-menu-section
+        a.w3-button.w3-text-orange.w3-hover-dark-gray.w3-hover-text-white(href='#' onclick='logout()') Logout

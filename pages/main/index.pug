@@ -1,0 +1,35 @@
+doctype html
+head
+	title Movie Database
+	link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+	link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
+	link(rel='stylesheet' href='home-style')
+	script(src='https://kit.fontawesome.com/7e8647c319.js' crossorigin='anonymous')
+
+body(onload='startFunction()')
+	include ../templates/topbar
+	
+	div.w3-container.w3-padding-32
+		div.w3-row
+			div.w3-col.m2.unselectable &nbsp;
+			div.w3-col.m8
+				div.w3-container(style='margin-top: 200px;')
+					div.w3-bar.w3-border.w3-row.search-section
+						select#search-type.w3-input.w3-bar-item.w3-col.s2
+							option(value='1') Title
+							option(value='2') Year
+							option(value='3') Actor
+							option(value='4') Director
+							option(value='5') User
+						input#query.w3-input.w3-bar-item.w3-col.s9(type='text' placeholder='Search')
+						button#searchbtn.w3-bar-item.w3-button.w3-orange.w3-col.s1(onclick='searchMovie()' style='padding: 12px;')
+							i.fa.fa-search
+					div.w3-row.w3-text-orange.section-bg
+						h2 Browse Genre
+						div#genre-container
+							each g in genres
+								span(onclick='browseGenre(this.innerHTML)')= g
+			
+			div.w3-col.m2.unselectable &nbsp;
+	
+	script(src='home-client')

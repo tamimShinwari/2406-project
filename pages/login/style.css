@@ -1,0 +1,25 @@
+*:focus {
+    outline: none;
+}
+
+.unselectable {
+    -webkit-user-select: none;      
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.title {
+    text-align: center;
+    font-size: 32pt;
+    padding: 40px 20px;
+}
+
+.link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.link:hover {
+    text-decoration: none;
+    font-weight: 700;
+}

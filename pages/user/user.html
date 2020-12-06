@@ -1,0 +1,143 @@
+<html>
+	<head>
+		<title>Movie Database</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="/user-style">
+		
+		<script src="https://kit.fontawesome.com/7e8647c319.js" crossorigin="anonymous"></script>
+	</head>
+	<body onload="startFunction()">
+		<div class="w3-top topbar">
+			<div class="w3-bar">
+				<a href="/home" class="w3-bar-item w3-button w3-orange w3-hover-orange" style="font-size: 18pt; padding: 10px 20px;">Epic Movie Database</a>
+				<button id="userName_placeholder" onclick="toggleMenu()" class="w3-bar-item w3-right w3-button w3-text-orange w3-hover-orange" style="font-size: 18pt; padding: 10px 40px;"><i class="fas fa-user"></i> &nbsp; User 1</button>
+			</div>
+		</div>
+
+		<div id="user-menu-out" onclick="toggleMenu()"></div>
+		<div id="user-menu" class="">
+			<div class="user-menu-section">
+				<a href="/profile" class="w3-button w3-text-orange w3-hover-dark-gray w3-hover-text-white">Profile</a>
+				<a href="/contribute" class="w3-button w3-text-orange w3-hover-dark-gray w3-hover-text-white">Contribute</a>
+			</div>
+			<div class="user-menu-section">
+				<a href="#" onclick="logout()" class="w3-button w3-text-orange w3-hover-dark-gray w3-hover-text-white">Logout</a>
+			</div>
+		</div>
+
+		<div class="w3-container w3-padding-32" style="margin-top: 80px;">
+			<div class="w3-row">
+				<div class="w3-col m2 unselectable">&nbsp;</div>
+
+				<div class="w3-col m8 w3-text-orange">				
+					<div class="w3-container w3-dark-gray w3-padding-32 w3-round-large profile-area w3-center">
+						<img src="/default-profile-icon.jpg">
+
+						<div class="w3-row w3-center w3-margin-top">
+							<button style="width: 120px;" class="w3-button w3-black w3-text-orange w3-hover-orange" onclick="followUser()">FOLLOW</button><button style="width: 120px;" class="w3-button w3-black w3-text-orange w3-hover-orange" onclick="unfollowUser()">UNFOLLOW</button>
+						</div>
+						
+						<div class="w3-row w3-left-align w3-margin-top">
+							<div class="w3-col m2 unselectable">&nbsp;</div>
+							<div class="w3-col m8 w3-padding-large w3-round-large w3-gray">
+								<div class="w3-row">
+									<div>
+										<div class="w3-col s3">
+											<b>Username:</b>
+										</div>
+										<div class="w3-col s9">
+											<span id="username"></span>
+										</div>
+									</div>
+								</div>
+
+								<div class="w3-row">
+									<div>
+										<div class="w3-col s3">
+											<b>Account Type:</b>
+										</div>
+										<div class="w3-col s9">
+											<span id="type"></span>
+										</div>
+									</div>
+								</div>
+
+								<div class="w3-row">
+									<div>
+										<div class="w3-col s3">
+											<b>Followers:</b>
+										</div>
+										<div class="w3-col s9">
+											<span id="followers"></span>
+										</div>
+									</div>
+								</div>
+
+								<div class="w3-row">
+									<div>
+										<div class="w3-col s3">
+											<b>Following:</b>
+										</div>
+										<div class="w3-col s9">
+											<span id="following"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="w3-col m2 unselectable">&nbsp;</div>
+						</div>
+
+
+						<div class="w3-row w3-left-align w3-margin-top">
+							<div class="w3-col m2 unselectable">&nbsp;</div>
+							<div class="w3-col m8 w3-round-large w3-gray" style="overflow: hidden;">
+  
+								<div class="w3-row w3-black">
+									<button class="tablink w3-half w3-button w3-orange" onclick="openSection(event, 'followers_section')">Followers</button>
+									<button class="tablink w3-half w3-button" onclick="openSection(event, 'following_section')">Following</button>
+								</div>
+
+								<div id="followers_section" class="w3-container followSection">
+									<ul class="w3-ul follow_list w3-hoverable" id="followers_list">
+
+									</ul>
+								</div>
+								
+								<div id="following_section" class="w3-container followSection" style="display:none">
+									<ul class="w3-ul follow_list w3-hoverable" id="following_list">
+										
+									</ul>
+								</div>
+
+							</div>
+							<div class="w3-col m2 unselectable">&nbsp;</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="w3-col m2 unselectable">&nbsp;</div>
+			</div>
+		</div>
+	
+		<script src="/user-client2"></script>
+		<script>
+			function openSection(evt, sectionName) {
+				var i;
+				var x = document.getElementsByClassName("followSection");
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";  
+				}
+
+				tablinks = document.getElementsByClassName("tablink");
+				for (i = 0; i < x.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(" w3-orange", "");
+				}
+
+				document.getElementById(sectionName).style.display = "block";
+				evt.currentTarget.className += " w3-orange";
+			}
+		</script>
+	</body>
+</html>

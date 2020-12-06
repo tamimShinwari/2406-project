@@ -1,0 +1,99 @@
+<html>
+	<head>
+		<title>Movie Database</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="user-style">
+		
+		<script src="https://kit.fontawesome.com/7e8647c319.js" crossorigin="anonymous"></script>
+	</head>
+	<body onload="startFunction()">
+		<div class="w3-top topbar">
+			<div class="w3-bar">
+				<a href="/home" class="w3-bar-item w3-button w3-orange w3-hover-orange" style="font-size: 18pt; padding: 10px 20px;">Epic Movie Database</a>
+				<button id="userName_placeholder" onclick="toggleMenu()" class="w3-bar-item w3-right w3-button w3-text-orange w3-hover-orange" style="font-size: 18pt; padding: 10px 40px;"><i class="fas fa-user"></i> &nbsp; User 1</button>
+			</div>
+		</div>
+
+		<div id="user-menu-out" onclick="toggleMenu()"></div>
+		<div id="user-menu" class="">
+			<div class="user-menu-section">
+				<a href="/profile" class="w3-button w3-text-orange w3-hover-dark-gray w3-hover-text-white">Profile</a>
+				<a href="#" class="w3-button w3-text-orange w3-hover-dark-gray w3-hover-text-white">Contribute</a>
+			</div>
+			<div class="user-menu-section">
+				<a href="#" onclick="logout()" class="w3-button w3-text-orange w3-hover-dark-gray w3-hover-text-white">Logout</a>
+			</div>
+		</div>
+
+		<div class="w3-container w3-padding-32" style="margin-top: 80px;">
+			<div class="w3-row">
+				<div class="w3-col m2 unselectable">&nbsp;</div>
+
+				<div class="w3-col m8 w3-text-orange">				
+					<div class="w3-container w3-padding-32 w3-round-large w3-center">
+
+						<div class="w3-row w3-left-align w3-round-large w3-dark-gray">
+							<div class="w3-col m2 unselectable">&nbsp;</div>
+							<div class="w3-col m8 w3-padding-32" style="overflow: hidden;">
+								<header class="w3-container w3-text-orange">
+									<h1>Contribute Movies</h1>
+								</header>
+
+								<div class="w3-row w3-gray w3-padding w3-round-large">
+									<label>Your Movies</label>
+									<select class="w3-select w3-border" id="userMovies" onchange="fetchMovie(this.value)">
+										<option value="0" selected>(new)</option>
+									</select>
+								</div>
+
+								<div class="w3-row w3-gray w3-padding w3-round-large w3-margin-top">
+									<form>
+										<p><label>Movie ID</label>
+										<input class="w3-input w3-border" name="id" type="text" value="Set by server" disabled></p>
+	
+										<p><label>Movie Title</label>
+										<input class="w3-input w3-border" name="title" type="text"></p>
+		
+										<p><label>Year</label>
+										<input class="w3-input w3-border" name="year" type="text"></p>
+		
+										<p><label>Runtime in min</label>
+										<input class="w3-input w3-border" name="runtime" type="text"></p>
+		
+										<p><label>Director</label>
+										<input class="w3-input w3-border" name="director" type="text"></p>
+										
+										<p><label>Actors</label>
+										<input class="w3-input w3-border" name="actors" type="text"></p>
+		
+										<p><label>Genre</label>
+										<input class="w3-input w3-border" name="genre" type="text"></p>
+		
+										<p><label>Rated</label>
+										<input class="w3-input w3-border" name="rated" type="text"></p>
+		
+										<p><label>Poster</label>
+										<input class="w3-input w3-border" name="poster" type="text"></p>
+									</form>
+								</div>
+
+
+								<div class="w3-row w3-center w3-margin-top">
+									<button style="width: 120px;" class="w3-button w3-black w3-text-orange w3-hover-orange" onclick="saveMovie()">SAVE</button><button style="width: 120px;" class="w3-button w3-black w3-text-orange w3-hover-orange" onclick="deleteMovie()">DELETE</button>
+								</div>
+							</div>
+							<div class="w3-col m2 unselectable">&nbsp;</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="w3-col m2 unselectable">&nbsp;</div>
+			</div>
+		</div>
+	
+		<script src="user-client3"></script>
+	</body>
+</html>
